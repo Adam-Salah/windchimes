@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+#canvas-container {
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: black;
+}
+
+ .no-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  } 

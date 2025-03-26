@@ -2,7 +2,7 @@
   "name": "windchimes",
   "homepage": "https://adam-salah-ets.github.io/windchimes/",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
 "scripts": {
     "dev": "vite",

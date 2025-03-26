@@ -1,13 +1,11 @@
-import MousePointer from './components/MousePointer';
 import './styles/App.css';
-import { Canvas, useFrame } from '@react-three/fiber';
-import Background from './components/Background';
+import { Canvas } from '@react-three/fiber';
 import { Color } from 'three';
 import { useState } from 'react';
 import MouseController from './components/MouseController';
 
 function App() {
-    const [backgroundColor, setBackgroundColor] = useState('#63FFCD');
+    const [backgroundColor] = useState('#63FFCD');
     const [isMouseDown, setIsMouseDown] = useState(false);
 
 

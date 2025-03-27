@@ -8,9 +8,15 @@ function App() {
     const [backgroundColor] = useState('#63FFCD');
     const [isMouseDown, setIsMouseDown] = useState(false);
 
-
     return (
-        <div id='canvas-container' onMouseDown={() => setIsMouseDown(true)} onMouseUp={() => setIsMouseDown(false)}>
+        <div
+            id='canvas-container'
+            onMouseDown={() => setIsMouseDown(true)}
+            onMouseUp={() => setIsMouseDown(false)}
+            onTouchStart={() => setIsMouseDown(true)}
+            onTouchEnd={() => {setIsMouseDown(false)}}
+            onTouchCancel={() => setIsMouseDown(false)}
+        >
             <Canvas
                 camera={{ fov: 60, zoom: 1, position: [0, 0, 10] }}
                 scene={{ background: new Color(backgroundColor) }}

@@ -4,6 +4,7 @@ import { clamp } from 'three/src/math/MathUtils.js';
 import { useRef, useState } from 'react';
 
 export default function MouseController(props: MouseControllerProps) {
+    
     //Object hovering
     const [isHoveringObject, setIsHoveringObject] = useState<boolean>(false);
     const [hoveredObject, setHoveredObject] = useState<THREE.Object3D>();
@@ -56,7 +57,7 @@ export default function MouseController(props: MouseControllerProps) {
 
     useFrame(() => {
         if (props.isMouseDown) {
-            if (((!isHoveringObject || isDraggingCamera) && !isDraggingObject)) {
+            if ((!isHoveringObject || isDraggingCamera) && !isDraggingObject) {
                 mouseCoords.sub(new THREE.Vector2(pointer.x, pointer.y));
                 if (mouseCoords.x != 0 || mouseCoords.y != 0) {
                     setIsDraggingCamera(true);
@@ -66,7 +67,7 @@ export default function MouseController(props: MouseControllerProps) {
                 }
                 setIsDraggingCamera(true);
             } else {
-                setIsDraggingObject(true)
+                setIsDraggingObject(true);
             }
         } else {
             setIsDraggingCamera(false);
@@ -98,7 +99,7 @@ export default function MouseController(props: MouseControllerProps) {
     return (
         <mesh ref={cursor} scale={0.3} position={[100, 100, 100]}>
             <sphereGeometry />
-            <meshStandardMaterial />
+            <meshBasicMaterial />
         </mesh>
     );
 }

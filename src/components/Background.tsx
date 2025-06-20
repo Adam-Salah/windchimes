@@ -1,21 +1,18 @@
 import * as THREE from 'three';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 
 export default function Background(props: BackgroundProps) {
-    const mesh = useRef<THREE.Mesh>(new THREE.Mesh());
-
-    useEffect(() => {
-    }, []);
+    const mesh = useRef<THREE.Mesh>();
     
     return (
         <mesh ref={mesh} >
-            <planeGeometry args={[100, 100]} />
-            <meshBasicMaterial color={props.backgroundColor}/>
+            <planeGeometry scale={[100, 100]} />
+            <meshBasicMaterial color={props.color}/>
         </mesh>
     );
 }
 
 interface BackgroundProps {
-    backgroundColor: string;
+    color: string;
 }
